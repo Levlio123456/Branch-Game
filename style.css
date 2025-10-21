@@ -7,6 +7,7 @@ body {
 	margin: 0;
 	color: white;
 	font-family: Helvetica;
+	font-size: 2vh;
 }
 
 .backgroundHexagon {
@@ -17,20 +18,30 @@ body {
 	-webkit-user-drag: none;
 }
 
+
+
+.branchContainer {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0;
+	height: 0;
+}
+
 .reefBranch {
 	width: 60px;
 	height: 60px;
 	display: block;
 	background-color: rgb(202, 101, 118);
 	border-radius: 50px;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
 	border: solid 3px rgb(165, 83, 97);
 	text-align: center;
 	font-size: 0/*50px*/;
 	cursor: pointer;
+	position: absolute;
+	top: -30px;
+	left: -30px;
 }
 
 .reefBranch:hover {
@@ -38,53 +49,56 @@ body {
 }
 
 .branchA {
-	transform: translate(-75px, 115px);
+	transform: translate(-40px, 150px);
 }
 .branchB {
-	transform: translate(5px, 115px);
+	transform: translate(40px, 150px);
 }
 .branchC {
-	transform: translate(75px, 75px);
+	transform: rotate(-60deg) translate(-40px, 150px);
 }
 .branchD {
-	transform: translate(110px, 10px);
+	transform: rotate(-60deg) translate(40px, 150px);
 }
 .branchE {
-	transform: translate(110px, -75px);
+	transform: rotate(-120deg) translate(-40px, 150px);
 }
 .branchF {
-	transform: translate(75px, -140px);
+	transform: rotate(-120deg) translate(40px, 150px);
 }
 .branchG {
-	transform: translate(5px, -180px);
+	transform: rotate(-180deg) translate(-40px, 150px);
 }
 .branchH {
-	transform: translate(-75px, -180px);
+	transform: rotate(-180deg) translate(40px, 150px);
 }
 .branchI {
-	transform: translate(-150px, -140px);
+	transform: rotate(-240deg) translate(-40px, 150px);
 }
 .branchJ {
-	transform: translate(-185px, -75px);
+	transform: rotate(-240deg) translate(40px, 150px);
 }
 .branchK {
-	transform: translate(-185px, 10px);
+	transform: rotate(-300deg) translate(-40px, 150px);
 }
 .branchL {
-	transform: translate(-150px, 75px);
+	transform: rotate(-300deg) translate(40px, 150px);
 }
 
 .infoContainer {
 	text-align: center;
 	position: absolute;
 	width: 100vw;
-	font-size: 2vh;
 }
 
 #scoreCounter {
+	display: flex;
 	position: absolute;
-	right: 0px;
-	transform: translateX(0);
-	text-align: right;
-	margin: 25px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	vertical-align: center;
+	color: #000;
+	z-index: 10;
 }
