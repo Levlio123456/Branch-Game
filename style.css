@@ -92,13 +92,16 @@ body {
 }
 
 #scoreCounter {
-	display: flex;
+	display: block;
+	height: fit-content;
+	width: fit-content;
 	position: absolute;
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
 	text-align: center;
-	vertical-align: center;
 	color: #000;
 	z-index: 10;
+	font-size: 2vw;
+	font-family: Helvetica;
 }

@@ -1,13 +1,15 @@
-guess = document.getElementById('guess');
-correctness = document.getElementById('correctness');
-scoreCounter = document.getElementById('scoreCounter');
+const guess = document.getElementById('guess');
+const correctness = document.getElementById('correctness');
+const scoreCounter = document.getElementById('scoreCounter');
 
-score = 0;
-totalGames = 0;
+var selectedMode = 'timed';
 
-branches = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'];
-oldRandomBranch = 0;
-randomBranch = Math.floor(Math.random() * 12);
+var score = 0;
+var totalGames = 0;
+
+var branches = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'];
+var oldRandomBranch = 0;
+var randomBranch = Math.floor(Math.random() * 12);
 //console.log(branches[randomBranch]);
 guess.innerHTML = "Find branch: " + branches[randomBranch];
 
@@ -29,4 +31,9 @@ function branchClicked(branch) {
 		//console.log(branches[randomBranch]);
 		guess.innerHTML = "Find branch: " + branches[randomBranch];
 	}
+}
+
+function modeSelected() {
+	selectedMode = document.getElementById('modeSelect').value;
+	console.log(selectedMode);
 }

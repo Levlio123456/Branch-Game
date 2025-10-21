@@ -5,11 +5,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
+		<select name="Mode" id="modeSelect" onchange="modeSelected()">
+			<option value="timed">Timed</option>
+			<option value="goal">Goal</option>
+		</select>
 		<div class="infoContainer">
 			<h1 id="guess">Guess</h1>
 			<h1 id="correctness"></h1>
 		</div>
-		<h1 id="scoreCounter">0</h1>
+		<div id="scoreCounter">0</div>
 		<img src="Hexagon.png" class="backgroundHexagon" width="350px" height="auto">
 		<div class="branchContainer">
 			<div class="reefBranch branchA" onclick="branchClicked('A')"></div>
