@@ -1,0 +1,78 @@
+body {
+	background-color: #444;
+}
+
+.backgroundHexagon {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 50vh;
+}
+
+.reefBranch {
+	width: 60px;
+	height: 60px;
+	display: block;
+	background-color: rgb(202, 101, 118);
+	border-radius: 50px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border: solid 3px rgb(165, 83, 97);
+}
+
+.reefBranch:hover {
+	border: solid 3px black;
+}
+
+.branchA {
+	transform: translate(-75px, 115px);
+}
+.branchB {
+	transform: translate(5px, 115px);
+}
+.branchC {
+	transform: translate(75px, 75px);
+}
+.branchD {
+	transform: translate(110px, 10px);
+}
+.branchE {
+	transform: translate(110px, -75px);
+}
+.branchF {
+	transform: translate(75px, -140px);
+}
+.branchG {
+	transform: translate(5px, -180px);
+}
+.branchH {
+	transform: translate(-75px, -180px);
+}
+.branchI {
+	transform: translate(-150px, -140px);
+}
+.branchJ {
+	transform: translate(-185px, -75px);
+}
+.branchK {
+	transform: translate(-185px, 10px);
+}
+.branchL {
+	transform: translate(-150px, 75px);
+}
+
+h1 {
+	color: white;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	font-family: Helvetica;
+}
+
+#correctness {
+	top: 50px;
+	font-size: 15px;
+}
