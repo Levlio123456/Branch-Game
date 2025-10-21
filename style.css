@@ -1,5 +1,8 @@
 body {
 	background-color: #444;
+	-webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .backgroundHexagon {
@@ -7,7 +10,7 @@ body {
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
-	width: 50vh;
+	-webkit-user-drag: none;
 }
 
 .reefBranch {
@@ -21,10 +24,15 @@ body {
 	top: 50%;
 	transform: translate(-50%, -50%);
 	border: solid 3px rgb(165, 83, 97);
+	text-align: center;
+	font-size: 0/*50px*/;
+	color: white;
+	font-family: Helvetica;
+	cursor: pointer;
 }
 
 .reefBranch:hover {
-	border: solid 3px black;
+	border: solid 3px rgb(126, 64, 74);
 }
 
 .branchA {
