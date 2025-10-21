@@ -5,7 +5,8 @@ scoreCounter = document.getElementById('scoreCounter');
 score = 0;
 totalGames = 0;
 
-branches = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']
+branches = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'];
+oldRandomBranch = 0;
 randomBranch = Math.floor(Math.random() * 12);
 //console.log(branches[randomBranch]);
 guess.innerHTML = "Find branch: " + branches[randomBranch];
@@ -22,7 +23,10 @@ function branchClicked(branch) {
 	}
 	scoreCounter.innerHTML = score + ' / ' + totalGames + '<br>' + Math.floor(score / totalGames * 100) + '%';
 
-	randomBranch = Math.floor(Math.random() * 12);
-	//console.log(branches[randomBranch]);
-	guess.innerHTML = "Find branch: " + branches[randomBranch];
+	oldRandomBranch = randomBranch;
+	while (randomBranch === oldRandomBranch) {
+		randomBranch = Math.floor(Math.random() * 12);
+		//console.log(branches[randomBranch]);
+		guess.innerHTML = "Find branch: " + branches[randomBranch];
+	}
 }
