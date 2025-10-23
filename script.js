@@ -5,7 +5,7 @@ const timer = document.getElementById('timer');
 const restartMenu = document.getElementById('restartMenu');
 const endScore = document.getElementById('endScore');
 
-var selectedMode = 'goal';
+var selectedMode = 'timed';
 
 var score = 0;
 var totalGames = 0;
@@ -37,27 +37,28 @@ function branchClicked(branch) {
 		if (totalGames === 12) {
 			gameEnded();
 
-			var randomBranch = Math.floor(Math.random() * 12);
+			randomBranch = Math.floor(Math.random() * 12);
 			guess.innerHTML = "Find branch: " + branches[randomBranch];
 		}
-		return
-	}
+	} else if (selectedMode === 'timed') {
+		totalGames++;
+		
+		if (branch === branches[randomBranch]) {
+			//console.log('Correct!');
+			correctness.innerHTML = 'Correct!';
+			score++;
+		} else {
+			correctness.innerHTML = 'Incorrect!';
+		}
+		scoreCounter.innerHTML = score + ' / ' + totalGames + '<br>' + Math.floor(score / totalGames * 100) + '%';
 
-	totalGames++;
-	if (branch === branches[randomBranch]) {
-		//console.log('Correct!');
-		correctness.innerHTML = 'Correct!';
-		score++;
-	} else {
-		correctness.innerHTML = 'Incorrect!';
-	}
-	scoreCounter.innerHTML = score + ' / ' + totalGames + '<br>' + Math.floor(score / totalGames * 100) + '%';
-
-	oldRandomBranch = randomBranch;
-	while (randomBranch === oldRandomBranch) {
 		randomBranch = Math.floor(Math.random() * 12);
-		//console.log(branches[randomBranch]);
-		guess.innerHTML = 'Find branch: ' + branches[randomBranch];
+
+		oldRandomBranch = randomBranch;
+		while (randomBranch === oldRandomBranch) {
+			randomBranch = Math.floor(Math.random() * 12);
+			guess.innerHTML = 'Find branch: ' + branches[randomBranch];
+		}
 	}
 }
 
@@ -70,7 +71,7 @@ function restart() {
 	totalGames = 0;
 	gameActive = true;
 
-	var randomBranch = Math.floor(Math.random() * 12);
+	randomBranch = Math.floor(Math.random() * 12);
 	guess.innerHTML = "Find branch: " + branches[randomBranch];
 
 	if (selectedMode === 'timed') {

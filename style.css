@@ -111,7 +111,7 @@ body {
 
 .restartContainer {
 	display: block;
-	height: 125px;
+	height: min-content;
 	width: min-content;
 	position: absolute;
 	left: 50%;
@@ -119,6 +119,9 @@ body {
 	transform: translate(-50%, -50%);
 	background-color: #fff;
 	z-index: 12;
+}
+.restartContainer * {
+	margin: 2.5px;
 }
 
 #restart {
@@ -139,10 +142,34 @@ body {
 	border-color: #794911;
 }
 
+#modeSelect {
+	border: solid 3px #d27f1f;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: #ea9533;
+	font-size: 25px;
+	border-radius: 10px;
+	color: #fff;
+	font-family: Helvetica;
+}
+#modeSelect:hover {
+	border-color: #a36218;
+	cursor: pointer;
+}
+#modeSelect:active {
+	border-color: #794911;
+	outline: none;
+}
+#modeSelect:focus {
+	outline: none;
+}
+
 #timer {
 	font-size: 26px;
 	position: absolute;
 	right: 25px;
+	bottom: 0;
 }
 
 #endScore {
