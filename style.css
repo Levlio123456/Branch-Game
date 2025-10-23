@@ -47,6 +47,9 @@ body {
 .reefBranch:hover {
 	border: solid 3px rgb(126, 64, 74);
 }
+.reefBranch:active {
+	border-color: rgb(85, 44, 51);
+}
 
 .branchA {
 	transform: translate(-40px, 150px);
@@ -109,7 +112,7 @@ body {
 .restartContainer {
 	display: block;
 	height: 125px;
-	width: 150px;
+	width: min-content;
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -119,15 +122,32 @@ body {
 }
 
 #restart {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
 	border: solid 3px #d27f1f;
 	padding: 10px;
 	background-color: #ea9533;
 	border-radius: 10px;
 	font-size: 25px;
 	color: #fff;
+	font-family: Helvetica;
+	left: 50%;
+}
+#restart:hover {
+	border-color: #a36218;
+	cursor: pointer;
+}
+#restart:active {
+	border-color: #794911;
+}
+
+#timer {
+	font-size: 26px;
+	position: absolute;
+	right: 25px;
+}
+
+#endScore {
+	color: #000;
+	font: 24px;
+	text-align: center;
 	font-family: Helvetica;
 }

@@ -14,9 +14,11 @@
 			<h1 id="correctness"></h1>
 		</div>
 		<div id="scoreCounter">0</div>
-		<div class="restartContainer">
-			<button id="restart">Restart</button>
+		<div class="restartContainer" id="restartMenu">
+			<button id="restart" onclick="restart()">Restart!</button>
+			<h1 id="endScore">0 / 0<br>0%</h1>
 		</div>
+		<h1 id="timer">0:00</h1>
 		<img src="Hexagon.png" class="backgroundHexagon" width="350px" height="auto">
 		<div class="branchContainer">
 			<div class="reefBranch branchA" onclick="branchClicked('A')"></div>
