@@ -85,7 +85,6 @@ function restart() {
 
 function startTime(milliSeconds) {
 	var timeLeft = milliSeconds / 1000;
-	timer.style.display = 'auto';
 
 	timer.innerHTML = Math.floor(timeLeft/60)+':'+timeLeft % 60;
 	var updateTimer = setInterval(function() {
@@ -99,9 +98,8 @@ function startTime(milliSeconds) {
 
 }
 function startCounter() {
-	timer.style.display = 'none';
-
 	chosenBranchList = [];
+	timer.innerHTML = formatTime(0);
 	for (var count = 0; count < 12; count++) {
 		randomBranch = Math.floor(Math.random() * 12);
 
@@ -112,6 +110,15 @@ function startCounter() {
 	}
 	console.log(chosenBranchList);
 
+	var elapsedTime = 0;
+	var updateStopwatch = setInterval(function() {
+		elapsedTime += 10;
+		timer.innerHTML = formatTime(elapsedTime);
+		if (gameActive === false) {
+			clearInterval(updateStopwatch);
+		}
+	}, 10);
+
 	guess.innerHTML = 'Find branch: ' + chosenBranchList[totalGames];
 }
 
@@ -120,4 +127,16 @@ function gameEnded() {
 	restartMenu.style.display = 'block';
 	scoreCounter.style.display = 'none';
 	endScore.innerHTML = score + ' / ' + totalGames + '<br>' + Math.floor(score / totalGames * 100) + '%';
+}
+
+function formatTime(ms) {
+  let minutes = Math.floor((ms % 3600000) / 60000);
+  let seconds = Math.floor((ms % 60000) / 1000);
+	let milliSeconds = ms % 1000;
+
+  return (
+    String(minutes).padStart(1, '0') + ':' +
+    String(seconds).padStart(2, '0') + ':' +
+		String(milliSeconds).padStart(3, '0')
+  );
 }
