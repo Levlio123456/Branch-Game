@@ -102,7 +102,32 @@ body {
 	text-align: center;
 	color: #000;
 	z-index: 10;
-	font-size: 2vw;
+	font-size: 8vh;
 	font-family: Helvetica;
 }
 
+.restartContainer {
+	display: block;
+	height: 125px;
+	width: 150px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #fff;
+	z-index: 12;
+}
+
+#restart {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: solid 3px #d27f1f;
+	padding: 10px;
+	background-color: #ea9533;
+	border-radius: 10px;
+	font-size: 25px;
+	color: #fff;
+	font-family: Helvetica;
+}

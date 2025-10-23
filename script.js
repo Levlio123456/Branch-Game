@@ -37,3 +37,7 @@ function modeSelected() {
 	selectedMode = document.getElementById('modeSelect').value;
 	console.log(selectedMode);
 }
+
+function restart() {
+	
+}
