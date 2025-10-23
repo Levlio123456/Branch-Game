@@ -122,6 +122,9 @@ body {
 }
 .restartContainer * {
 	margin: 2.5px;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 #restart {
